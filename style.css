@@ -1,0 +1,75 @@
+body {
+    background-color: black;
+}
+
+.title {
+    color: rgb(255, 255, 0);
+    margin: -30px 0px -30px 270px;
+    font-size: 70pt;
+    font-family: 'Bungee Shade';
+}
+
+#wrapper {
+    /* margin-left: auto;
+    margin-right: auto; */
+    width: 1200px;
+}
+
+div.row div {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+}
+
+div.brick{
+    background-color: blue;
+}
+
+div.coin {
+    background: url(imgs/Coin2.gif) center;
+    background-size: contain;
+    background-repeat: no-repeat;           
+}
+
+div#pacman {
+    background: url(imgs/Pacman.gif) center;
+    /* background-size: contain;
+    background-position: center; */
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    rotate: 180deg;
+}
+
+div.empty {
+
+}
+
+.scoreBox {
+    display: flex;
+}
+
+.scoreTitle {
+    font-size: 50px;
+    color: rgb(255, 255, 0);
+    font-family: 'Bungee Shade';
+    margin-left: 450px;
+}
+
+#score {
+    font-size: 50px;
+    color: rgb(255, 255, 0);
+    font-family: 'Bungee Shade';
+    margin-left: 20px;
+}
+
+#youWin {
+    font-size: 150px;
+    color: rgb(255, 255, 0);
+    font-family: 'Bungee Shade';
+    position: absolute;
+    margin: -580px 0px 0px 160px;
+    opacity: 0;
+}
+
