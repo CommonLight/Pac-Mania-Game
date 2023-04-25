@@ -46,18 +46,21 @@ displayPacman()
 
 let currX = 13
 let currY = 5
-let coins = 0;
+let coins = 0
+
 
 document.onkeydown = function(e) {
     if(e.keyCode == 37) { //LEFT ARROW//
       const isWall = isThereAWall(currX - 1, currY);
       var img = document.getElementById('pacman');
       img.style.transform = 'rotate(180deg)' 
+      
       if(!isWall){
         pacman.x -= 44
         currX -= 1;
       }
     }
+
     else if(e.keyCode == 38) {//UP ARROW//
       const isWall = isThereAWall(currX, currY - 1);
       var img = document.getElementById('pacman');
@@ -68,6 +71,7 @@ document.onkeydown = function(e) {
         currY -= 1;
       }
     }
+
     else if(e.keyCode == 39) { //RIGHT ARROW//
       const isWall = isThereAWall(currX + 1, currY);
       var img = document.getElementById('pacman');
@@ -76,9 +80,9 @@ document.onkeydown = function(e) {
       if(!isWall){
         pacman.x += 44
         currX += 1;
-      }
-        
+      }    
     }
+
     else if(e.keyCode == 40) {//DOWN ARROW//
       const isWall = isThereAWall(currX, currY + 1);
       var img = document.getElementById('pacman');
@@ -94,12 +98,14 @@ document.onkeydown = function(e) {
     coins = isCoin ? coins + 1 : coins;
 
     if(isCoin){
-        // var coinSound = getElementById('coinSound')
-        //   coinSound.play()
+      var coinAudio = new Audio("sfx/coinSound.mp3")
+      coinAudio.play()
       removeCoin()
     }
 
     if(coins === 144){
+      // var winAudio = new Audio("sfx/winSound.mp3")
+      // winAudio.play()
       var winText = document.getElementById('youWin')
       winText.style.opacity = 100
     }
@@ -107,7 +113,6 @@ document.onkeydown = function(e) {
     displayWorld()
     displayPacman();
     document.getElementById('score').innerHTML=coins;
-    console.log("Your score is:", coins);
 }
 
 function isThereIsACoin(){
